@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invitación de Halloween 🎃🩵</title>
+
+  <!-- Fuentes de Google (necesitan internet) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Dancing+Script:wght@600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- Hoja de estilos: asegúrate de que el archivo se llama estilos.css y está en la misma carpeta -->
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+  <!-- ========== FONDO DECORATIVO ========== -->
+  <div class="luna" aria-hidden="true"></div>
+  <div class="niebla niebla-1" aria-hidden="true"></div>
+  <div class="niebla niebla-2" aria-hidden="true"></div>
+  <!-- Aquí el JavaScript añade murciélagos, corazones y calabazas flotando -->
+  <div id="flotantes" aria-hidden="true"></div>
+
+  <!-- ========== SECCIÓN 1: PORTADA ========== -->
+  <header class="portada">
+    <p class="pre-titulo">🦇 Una invitación muy especial 🦇</p>
+    <h1 class="titulo">
+      <span class="titulo-terror">Noche de Halloween</span>
+      <span class="titulo-amor">contigo 🩵</span>
+    </h1>
+    <p class="para">Para: <strong id="nombre-novia">mi amor</strong> 🩵</p>
+
+    <!-- Cuenta atrás hasta el 31 de octubre -->
+    <div class="cuenta-atras" id="cuenta-atras">
+      <div class="caja-tiempo"><span id="dias">0</span><small>días</small></div>
+      <div class="caja-tiempo"><span id="horas">0</span><small>horas</small></div>
+      <div class="caja-tiempo"><span id="minutos">0</span><small>min</small></div>
+      <div class="caja-tiempo"><span id="segundos">0</span><small>seg</small></div>
+    </div>
+
+    <a href="#mensaje" class="flecha-bajar" aria-label="Bajar a ver la invitación">
+      <span>Baja a verme</span>
+      <b>🕯️</b>
+    </a>
+  </header>
+
+  <main>
+
+    <!-- ========== SECCIÓN 2: MENSAJE ========== -->
+    <section id="mensaje" class="seccion aparecer">
+      <h2>🎃 Ven a verme esta noche 🎃</h2>
+      <p class="texto-grande">
+        Hay noches que dan miedo… pero ninguna da tanto miedo como
+        pasarla sin ti. Quiero celebrar Halloween contigo, entre luces de velas,
+        dulces y películas de terror donde tú te escondes en mi hombro. 🩵
+      </p>
+      <p class="texto-grande">
+        Y también quiero que hablemos. Tú y yo, con calma, sin enfados,
+        para resolver lo que tengamos pendiente. Porque lo que tenemos
+        vale mucho más que cualquier problema. 🩵
+      </p>
+    </section>
+
+    <!-- ========== SECCIÓN 3: DETALLES DEL PLAN ========== -->
+    <section class="seccion aparecer">
+      <h2>🕸️ El plan de la noche 🕸️</h2>
+      <div class="tarjetas">
+
+        <article class="tarjeta">
+          <div class="icono">📅</div>
+          <h3>Cuándo</h3>
+          <!-- EDITA ESTOS DATOS -->
+          <p>31 de octubre<br></p>
+        </article>
+
+        <article class="tarjeta">
+          <div class="icono">🏚️</div>
+          <h3>Dónde</h3>
+          <!-- EDITA ESTOS DATOS -->
+          <p>Ire a buscarte a tu casa o al trabajo 🩵<br>(si no tienes miedo jeje)</p>
+        </article>
+
+        <article class="tarjeta">
+          <div class="icono">🍬</div>
+          <h3>Qué haremos</h3>
+          <p>Pasear, ver peliculas,hablar sobre nosotros y lo nuestro </p>
+        </article>
+
+        <article class="tarjeta">
+          <div class="icono">👻</div>
+          <h3>Disfraz</h3>
+          <p>Opcional… pero si vamos a juego, mejor 😏</p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ========== SECCIÓN 4: RESPUESTA ========== -->
+    <section class="seccion aparecer" id="respuesta">
+      <h2>💀 ¿Aceptas mi invitación? 💀</h2>
+      <p class="texto-grande">Elige con cuidado… el botón de "No" tiene vida propia 👀</p>
+
+      <div class="botones">
+        <button class="boton boton-si" id="boton-si" type="button">Sí, acepto 🩵</button>
+        <button class="boton boton-no" id="boton-no" type="button">No 😈</button>
+      </div>
+
+      <!-- Este mensaje aparece al pulsar "Sí" -->
+      <div class="mensaje-final" id="mensaje-final" hidden>
+        <h3>¡Sabía que dirías que sí! 🥰</h3>
+        <p>Te quiero muchísimo. Nos vemos el 31, y esta noche solo existimos tú y yo. 🎃🩵</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="pie">
+    <p>Hecho con 🩵 y un poquito de magia oscura 🕷️</p>
+    <p>Se que hemos tenido problemas y no nos hemos entendido por muchas cosas que pasaron, pero nunca dejaria morir lo nuestro, porque te amo, y seria de cobarde no luchar por ti, que eres mi mundo.🌍🩵 </p>
+    <p>Siempre me decias que te demustre las cosas, y esto es una de esas cosas que te demostrare y no porque estemos mal, porque de verdad veo un futuro a tu lado, cumpliendo todo aquello que nos prometimos.🩵</p>
+    <p>Cuando leas esto espero que me escribas al menos por tik tok, solo dime un "si acepto o un si" y yo lo entendere y ire el viernes en la noche, espero tu respuesta🩵</p>
+    <p>Igualmente iria a verte🩵</p>
+    <p>Con cariño, tu pingüinito 🐧🩵</p>
+  </footer>
+
+  <!-- ========== JAVASCRIPT (efectos) ========== -->
+  <script>
+    // ---------- CONFIGURACIÓN: edita aquí ----------
+    const NOMBRE_NOVIA = "mi amor";               // Pon aquí su nombre, ej: "Laura"
+    const FECHA_HALLOWEEN = "2026-10-31T21:00:00"; // Fecha y hora de la cita
+    // ------------------------------------------------
+
+    // Poner el nombre en la portada
+    document.getElementById("nombre-novia").textContent = NOMBRE_NOVIA;
+
+    // ---------- CUENTA ATRÁS ----------
+    function actualizarCuentaAtras() {
+      const ahora = new Date();
+      const objetivo = new Date(FECHA_HALLOWEEN);
+      let diferencia = objetivo - ahora;
+
+      if (diferencia < 0) diferencia = 0; // Si ya pasó, se queda en 0
+
+      const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+      const horas = Math.floor((diferencia / (1000 * 60 * 60)) % 24);
+      const minutos = Math.floor((diferencia / (1000 * 60)) % 60);
+      const segundos = Math.floor((diferencia / 1000) % 60);
+
+      document.getElementById("dias").textContent = dias;
+      document.getElementById("horas").textContent = horas;
+      document.getElementById("minutos").textContent = minutos;
+      document.getElementById("segundos").textContent = segundos;
+    }
+    actualizarCuentaAtras();
+    setInterval(actualizarCuentaAtras, 1000);
+
+    // ---------- ELEMENTOS FLOTANTES (murciélagos, corazones, calabazas) ----------
+    const contenedor = document.getElementById("flotantes");
+    const emojis = ["🦇", "🩵", "🎃", "🩵", "🕷️", "👻", "🩵", "🍬"];
+
+    function crearFlotante() {
+      const el = document.createElement("span");
+      el.className = "flotante";
+      el.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+      el.style.left = Math.random() * 100 + "vw";
+      el.style.fontSize = 16 + Math.random() * 28 + "px";
+      el.style.animationDuration = 8 + Math.random() * 10 + "s";
+      el.style.opacity = 0.4 + Math.random() * 0.6;
+      contenedor.appendChild(el);
+      // Se elimina al terminar para no llenar la página
+      setTimeout(() => el.remove(), 18000);
+    }
+    setInterval(crearFlotante, 700);
+
+    // ---------- APARECER AL HACER SCROLL ----------
+    const observador = new IntersectionObserver((entradas) => {
+      entradas.forEach((entrada) => {
+        if (entrada.isIntersecting) entrada.target.classList.add("visible");
+      });
+    }, { threshold: 0.15 });
+    document.querySelectorAll(".aparecer").forEach((el) => observador.observe(el));
+
+    // ---------- BOTÓN "NO" QUE ESCAPA ----------
+    const botonNo = document.getElementById("boton-no");
+    let escapadas = 0;
+    function escapar() {
+      escapadas++;
+      if (escapadas >= 10) {
+        botonNo.hidden = true;
+        return;
+      }
+
+      botonNo.classList.add("escapando");
+      document.body.appendChild(botonNo);
+      const maxX = window.innerWidth - botonNo.offsetWidth - 20;
+      const maxY = window.innerHeight - botonNo.offsetHeight - 20;
+      botonNo.style.left = Math.max(10, Math.random() * maxX) + "px";
+      botonNo.style.top = Math.max(10, Math.random() * maxY) + "px";
+    }
+    botonNo.addEventListener("mouseenter", escapar);
+    botonNo.addEventListener("touchstart", (e) => { e.preventDefault(); escapar(); });
+    botonNo.addEventListener("click", escapar);
+
+    // ---------- BOTÓN "SÍ": EXPLOSIÓN DE CORAZONES ----------
+    const botonSi = document.getElementById("boton-si");
+    botonSi.addEventListener("click", () => {
+      document.getElementById("mensaje-final").hidden = false;
+      botonNo.style.display = "none";
+      botonSi.disabled = true;
+
+      // Lluvia de confeti de emojis
+      for (let i = 0; i < 60; i++) {
+        setTimeout(() => {
+          const c = document.createElement("span");
+          c.className = "confeti";
+          c.textContent = ["🩵", "🩵", "🎃", "🦇", "✨"][Math.floor(Math.random() * 5)];
+          c.style.left = Math.random() * 100 + "vw";
+          c.style.fontSize = 18 + Math.random() * 26 + "px";
+          c.style.animationDuration = 2 + Math.random() * 2 + "s";
+          document.body.appendChild(c);
+          setTimeout(() => c.remove(), 4500);
+        }, i * 40);
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,395 @@
+/* =====================================================
+   ESTILOS.CSS - Invitación Halloween + Amor
+   Secciones: 1) Variables  2) Base  3) Fondo  4) Portada
+              5) Secciones  6) Tarjetas  7) Botones
+              8) Animaciones  9) Responsive
+   ===================================================== */
+
+/* ---------- 1) VARIABLES DE COLOR ---------- */
+:root {
+  --fondo: #0d0614;
+  --fondo-2: #1a0b2e;
+  --morado: #8e44ad;
+  --morado-claro: #c39bd3;
+  --naranja: #ff7518;
+  --rojo-amor: #ff3b6b;
+  --rosa: #ff8fb1;
+  --texto: #f3e9ff;
+}
+
+/* ---------- 2) BASE ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: var(--texto);
+  background: radial-gradient(circle at top, var(--fondo-2), var(--fondo) 70%);
+  background-attachment: fixed;
+  min-height: 100vh;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* ---------- 3) FONDO DECORATIVO ---------- */
+.luna {
+  position: fixed;
+  top: 6vh;
+  right: 8vw;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #fffbe6, #ffe9a8 60%, #e8c76a);
+  box-shadow: 0 0 60px 20px rgba(255, 233, 168, 0.35);
+  animation: brillo-luna 4s ease-in-out infinite alternate;
+  z-index: 0;
+}
+
+.niebla {
+  position: fixed;
+  left: -50%;
+  width: 200%;
+  height: 160px;
+  background: radial-gradient(ellipse at center, rgba(195, 155, 211, 0.18), transparent 70%);
+  z-index: 0;
+  pointer-events: none;
+}
+.niebla-1 { bottom: 0; animation: niebla 25s linear infinite; }
+.niebla-2 { bottom: 40px; animation: niebla 40s linear infinite reverse; }
+
+#flotantes {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.flotante {
+  position: absolute;
+  bottom: -50px;
+  animation-name: subir;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  filter: drop-shadow(0 0 6px rgba(255, 120, 200, 0.6));
+}
+
+/* ---------- 4) PORTADA ---------- */
+.portada {
+  position: relative;
+  z-index: 2;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.pre-titulo {
+  color: var(--morado-claro);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  animation: entrar 1.2s ease both;
+}
+
+.titulo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  margin-bottom: 1rem;
+}
+
+.titulo-terror {
+  font-family: "Creepster", cursive;
+  font-size: clamp(2.8rem, 10vw, 6rem);
+  color: var(--naranja);
+  text-shadow: 0 0 10px var(--naranja), 0 0 30px #b34700, 0 0 60px #b34700;
+  animation: parpadeo-vela 3s infinite, entrar 1.4s ease both;
+}
+
+.titulo-amor {
+  font-family: "Dancing Script", cursive;
+  font-size: clamp(2.2rem, 8vw, 4.5rem);
+  color: var(--rosa);
+  text-shadow: 0 0 12px var(--rojo-amor);
+  animation: latido 1.6s ease-in-out infinite;
+}
+
+.para {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  animation: entrar 1.8s ease both;
+}
+.para strong {
+  color: var(--rosa);
+  font-family: "Dancing Script", cursive;
+  font-size: 1.8rem;
+}
+
+/* Cuenta atrás */
+.cuenta-atras {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+.caja-tiempo {
+  background: rgba(142, 68, 173, 0.18);
+  border: 1px solid var(--morado);
+  border-radius: 14px;
+  padding: 0.8rem 1rem;
+  min-width: 78px;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 0 15px rgba(142, 68, 173, 0.4);
+}
+.caja-tiempo span {
+  display: block;
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--naranja);
+}
+.caja-tiempo small {
+  color: var(--morado-claro);
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+}
+
+/* Flecha para bajar */
+.flecha-bajar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  color: var(--morado-claro);
+  text-decoration: none;
+  animation: rebote 2s infinite;
+}
+.flecha-bajar b {
+  font-size: 2rem;
+  filter: drop-shadow(0 0 10px var(--naranja));
+}
+
+/* ---------- 5) SECCIONES ---------- */
+main {
+  position: relative;
+  z-index: 2;
+}
+
+.seccion {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 5rem 1.5rem;
+  text-align: center;
+}
+
+.seccion h2 {
+  font-family: "Creepster", cursive;
+  font-size: clamp(2rem, 6vw, 3.2rem);
+  color: var(--naranja);
+  margin-bottom: 1.5rem;
+  text-shadow: 0 0 15px rgba(255, 117, 24, 0.6);
+}
+
+.texto-grande {
+  font-size: 1.1rem;
+  margin-bottom: 1.2rem;
+  color: var(--texto);
+}
+
+/* Efecto de aparecer al hacer scroll (la clase "visible" la pone el JS) */
+.aparecer {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+.aparecer.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------- 6) TARJETAS ---------- */
+.tarjetas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 1.2rem;
+}
+
+.tarjeta {
+  background: linear-gradient(145deg, rgba(142, 68, 173, 0.25), rgba(255, 59, 107, 0.12));
+  border: 1px solid rgba(195, 155, 211, 0.35);
+  border-radius: 18px;
+  padding: 1.6rem 1rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.tarjeta:hover {
+  transform: translateY(-8px) rotate(-1deg);
+  box-shadow: 0 10px 30px rgba(255, 59, 107, 0.35);
+}
+.tarjeta .icono {
+  font-size: 2.6rem;
+  margin-bottom: 0.5rem;
+}
+.tarjeta h3 {
+  color: var(--rosa);
+  margin-bottom: 0.4rem;
+}
+
+/* ---------- 7) BOTONES ---------- */
+.botones {
+  display: flex;
+  gap: 1.2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+  min-height: 70px;
+}
+
+.boton {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  padding: 0.9rem 2rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.3s;
+}
+
+.boton-si {
+  background: linear-gradient(135deg, var(--rojo-amor), var(--morado));
+  color: #fff;
+  box-shadow: 0 0 20px rgba(255, 59, 107, 0.6);
+  animation: latido 1.6s ease-in-out infinite;
+}
+.boton-si:hover {
+  transform: scale(1.12);
+  box-shadow: 0 0 35px rgba(255, 59, 107, 0.9);
+}
+
+.boton-no {
+  background: #2b2236;
+  color: var(--morado-claro);
+  border: 1px solid var(--morado);
+  transition: left 0.25s, top 0.25s;
+}
+/* Cuando escapa, pasa a posición fija en la pantalla */
+.boton-no.escapando {
+  position: fixed;
+  z-index: 50;
+}
+
+.mensaje-final {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  border-radius: 20px;
+  background: rgba(255, 59, 107, 0.15);
+  border: 1px solid var(--rojo-amor);
+  animation: entrar 1s ease both;
+}
+.mensaje-final h3 {
+  font-family: "Dancing Script", cursive;
+  font-size: 2.2rem;
+  color: var(--rosa);
+}
+
+.pie {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 2rem 1rem 3rem;
+  color: var(--morado-claro);
+}
+
+/* Confeti al pulsar "Sí" */
+.confeti {
+  position: fixed;
+  top: -40px;
+  z-index: 100;
+  pointer-events: none;
+  animation-name: caer;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
+}
+
+/* ---------- 8) ANIMACIONES ---------- */
+@keyframes subir {
+  from { transform: translateY(0) rotate(0deg); }
+  to   { transform: translateY(-115vh) rotate(360deg); }
+}
+
+@keyframes caer {
+  to { transform: translateY(110vh) rotate(540deg); }
+}
+
+@keyframes parpadeo-vela {
+  0%, 100% { opacity: 1; }
+  45% { opacity: 0.85; }
+  50% { opacity: 0.6; }
+  55% { opacity: 0.95; }
+}
+
+@keyframes latido {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.06); }
+}
+
+@keyframes rebote {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(12px); }
+}
+
+@keyframes entrar {
+  from { opacity: 0; transform: translateY(25px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes brillo-luna {
+  from { box-shadow: 0 0 40px 10px rgba(255, 233, 168, 0.25); }
+  to   { box-shadow: 0 0 80px 28px rgba(255, 233, 168, 0.45); }
+}
+
+@keyframes niebla {
+  from { transform: translateX(0); }
+  to   { transform: translateX(25%); }
+}
+
+/* ---------- 9) RESPONSIVE (móvil) ---------- */
+@media (max-width: 600px) {
+  .luna {
+    width: 70px;
+    height: 70px;
+    right: 5vw;
+  }
+  .caja-tiempo {
+    min-width: 64px;
+    padding: 0.6rem 0.7rem;
+  }
+  .caja-tiempo span {
+    font-size: 1.5rem;
+  }
+  .seccion {
+    padding: 3.5rem 1.2rem;
+  }
+}
+
+/* Respeta a quien prefiere menos animaciones */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
